@@ -1,0 +1,19 @@
+<div class="ui container">
+  <table class="ui red table">
+    <thead>
+      <tr>
+        <th class="ui aligned" >Name</th>
+        <th class="ui aligned" >E-Mail</th>
+        <th class="ui aligned" >Body</th>
+      </tr>
+    </thead>
+    <tbody *ngFor = "let comment of comments$ | async">
+      <tr>
+        <td> {{comment.name}} </td>
+        <td> {{comment.email}} </td>
+        <td> {{comment.body}} </td>
+      </tr>
+    </tbody>
+  </table>
+  <prd-paginator [totalCount]="totalCount$" (fetchData)="fetchData($event)"></prd-paginator>
+</div>

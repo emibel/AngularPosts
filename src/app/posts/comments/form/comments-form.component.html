@@ -1,0 +1,38 @@
+<form [formGroup]='form'
+  (ngSubmit)="onSubmit(form.value)"
+  class="ui form"
+>
+  <div class="field">
+    <label>
+      Name:
+      <input
+        type="text"
+        placeholder="name"
+        [formControl]="form.controls['name']"
+      >
+    </label>
+    <div *ngIf=" submitted && form.controls['name'].hasError('required')">
+      Name is required
+    </div>
+    <div *ngIf=" submitted && this.form.controls['name'].hasError('minlength')">
+      Name min length is 2
+    </div>
+  </div>
+  <div class="field">
+    <label>
+      Price:
+      <input
+        type="number"
+        placeholder="price"
+        [formControl]="form.controls['price']"
+      >
+    </label>
+    <div *ngIf=" submitted && form.controls['price'].hasError('required')">
+      Price is required
+    </div>
+    <div *ngIf=" submitted && this.form.controls['price'].hasError('price')">
+      Price should be positive
+    </div>
+  </div>
+  <button class="ui red button send-button" type="submit">Send</button>
+</form>

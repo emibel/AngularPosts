@@ -1,0 +1,7 @@
+<div class="{{classItem}}">
+  <a [routerLink]="['/posts', post.id, 'comments']">
+    <div class="post-title"> {{post.title}} </div>
+  </a>
+  <a [routerLink]="['/users', post.userId]">User</a>
+  <div> {{post.body}} </div>
+</div>

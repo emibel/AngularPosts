@@ -1,0 +1,16 @@
+.title {
+  color: green;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid green;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.active-link {
+  color: red !important;
+  font-weight: bold !important;
+}

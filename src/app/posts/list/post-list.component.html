@@ -1,0 +1,11 @@
+
+<div class="ui container">
+  <prd-post-counter></prd-post-counter>
+  <div class="post">
+    <div *ngFor = "let post of posts$ | async">
+      <div class="ui divider"></div>
+      <prd-post-list-item [post]="post" [classItem]="'post-item'"></prd-post-list-item>
+    </div>
+  </div>
+  <prd-paginator [totalCount]="totalCount$" (fetchData)="fetchData($event)"></prd-paginator>
+</div>

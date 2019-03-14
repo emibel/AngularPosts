@@ -1,0 +1,17 @@
+<div *ngIf="!loggedUser">
+  <label>Login: </label>
+  <button class="ui circular facebook icon button" (click)="signIn('facebook')">
+    <i class="facebook icon"></i>
+  </button>
+  <button class="ui circular google plus icon button" (click)="signIn('google')">
+    <i class="google plus icon"></i>
+  </button>
+</div>
+
+<div *ngIf="loggedUser">
+  <img class="ui circular mini right spaced image" src="{{loggedUser.image}}">
+  <span>{{loggedUser.email}}</span>
+  <button class="ui button" (click)="logout()">
+    Logout
+  </button>
+</div>
